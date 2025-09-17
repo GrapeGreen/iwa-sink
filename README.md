@@ -17,8 +17,8 @@ details). As such, clicking on any of the links below will select an existing
 app instance (or create a new one if there's none running) and navigate it to
 `/cf.html` with some custom query params. Note that this requires the app to be
 installed and at least Chrome 142.
-  - [Click me](cf://?text=Lucky&color=peachpuff) if you're feeling lucky
-  - [Click me](cf://?text=Unlucky&color=slategrey) if you're feeling unlucky
+  - <a href="cf://?text=Lucky&color=peachpuff">Click me</a> if you're feeling lucky
+  - <a href="cf://?text=Unlucky&color=slategrey">Click me</a> if you're feeling unlucky
 
 ## Installing as a Demo
 
