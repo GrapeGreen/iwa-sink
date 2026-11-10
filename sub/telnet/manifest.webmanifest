@@ -1,0 +1,37 @@
+{
+  "id": "/sub/telnet/index.html",
+  "name": "IWA Telnet Terminal",
+  "short_name": "Telnet",
+  "description": "Standalone Direct Sockets TCP ANSI Terminal sub-app.",
+  "start_url": "/sub/telnet/index.html",
+  "scope": "/sub/telnet/",
+  "display": "standalone",
+  "background_color": "#24211e",
+  "theme_color": "#24211e",
+  "isolated_storage": true,
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "icons": [
+    {
+      "src": "/images/telnet-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/telnet-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/sub/telnet/index.html",
+      "accept": {
+        "text/plain": [".telnet", ".log", ".txt"]
+      }
+    }
+  ]
+}
