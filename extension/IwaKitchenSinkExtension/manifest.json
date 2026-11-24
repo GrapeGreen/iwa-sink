@@ -1,29 +1,20 @@
 {
   "manifest_version": 3,
-
   "name": "IWA Kitchen Sink Companion Extension",
   "description": "Companion extension for the IWA Kitchen Sink",
   "version": "1.1",
-
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp8Qc/gX9Zv9LBPPcyBYUGtNQ8xCZFPtu4FoxNlYk6e3PcB6rbS02Nx/jFEdskEXQDahBDflQps72cZsLTn6w4Pd6UKQTR7vXBRwkFhqGzuzpMQlQEo4KQmTAwdjMS5FxmxbpXjYhvV82FL7CPQjNZzt4sZx1iMTMIaijJ9XZ1KzAf409tAEBHJEIPFXCa1/pPET7Eao12tMhVMAhx4ksOHQSnnfpApsIOtkFVpeFOuHCsKwvZXBV/Sn8BQW6sgmusTUlmQfok3tzkxtxBJkSLtQKK0od/KOs/3jNs35+aS9kKMLj3lOsN9XyQVKfJUGgPKSG3j0cyXvEC6U1Zp78OQIDAQAB",
   "background": {
     "service_worker": "/scripts/background.js"
   },
-
   "externally_connectable": {
-    "matches": [
-      "isolated-app://*/*"
-    ]
+    "matches": ["isolated-app://*/*"]
   },
-
-  "permissions": [
-    "identity"
-  ],
-
+  "permissions": ["identity", "identity.email"],
   "icons": {
     "16": "/images/get_started16.png",
     "32": "/images/get_started32.png",
     "48": "/images/get_started48.png",
     "128": "/images/get_started128.png"
   }
-  
 }

@@ -1,62 +1,93 @@
 {
   "id": "/",
-  "short_name": "IWA KS",
-  "name": "Kitchen Sink IWA",
-  "version": "0.0.0",
+  "name": "IWA Sink",
+  "short_name": "IWA Sink",
+  "description": "IWA Sink: Direct Sockets TCP, Controlled Frame, Loopback PKCE SSO, Sub-Apps, Desktop Windowing, ChromeOS Screen Capture, and Extension Connectivity.",
+  "version": "1.0.0",
   "update_manifest_url": "https://github.com/chromeos/iwa-sink/releases/latest/download/update.json",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#24211e",
+  "theme_color": "#24211e",
+  "isolated_storage": true,
+  "display_override": [
+    {
+      "display": "unframed",
+      "url_patterns": [
+        {
+          "pathname": "/hud.html",
+          "search": "*",
+          "hash": "*"
+        }
+      ]
+    }
+  ],
   "icons": [
     {
       "src": "/images/icon.png",
-      "type": "image/png",
       "sizes": "512x512",
-      "purpose": "any maskable"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "start_url": "/",
-  "display": "standalone",
-  "display_override": ["unframed"],
-  "scope": "/",
-  "isolated_storage": true,
   "permissions_policy": {
+    "all-screens-capture": ["self"],
+    "clipboard-write": ["self"],
+    "display-capture": ["self"],
     "cross-origin-isolated": ["self"],
     "direct-sockets": ["self"],
     "direct-sockets-private": ["self"],
-    "controlled-frame": ["self"],
-    "window-management": ["self"],
-    "all-screens-capture": ["self"],
     "local-network": ["self"],
-    "loopback-network": ["self"]
+    "loopback-network": ["self"],
+    "local-network-access": ["self"],
+    "controlled-frame": ["self"],
+    "sub-apps": ["self"],
+    "window-management": ["self"]
   },
   "protocol_handlers": [
     {
       "protocol": "web+cf",
-      "url": "/cf.html?params=%s"
+      "url": "/?protocol=%s"
     },
     {
       "protocol": "cf",
-      "url": "/cf.html?params=%s"
+      "url": "/?protocol=%s"
     }
   ],
   "launch_handler": {
-    "client_mode": "navigate-existing"
+    "client_mode": "focus-existing"
   },
-  "shortcuts": [{
-    "name": "Controlled Frame",
-    "url": "/cf.html",
-    "icons": [{
-      "src": "/images/cf.png",
-      "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "maskable"
-    }]
-  }, {
-    "name": "Direct Sockets",
-    "url": "/",
-    "icons": [{
-      "src": "/images/direct-sockets.png",
-      "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "maskable"
-    }]
-  }]
+  "shortcuts": [
+    {
+      "name": "TCP Echo",
+      "url": "/?workspace=tcp-terminal",
+      "icons": [
+        {
+          "src": "/images/direct-sockets.png",
+          "type": "image/png",
+          "sizes": "512x512",
+          "purpose": "any"
+        }
+      ]
+    },
+    {
+      "name": "Controlled Frame",
+      "url": "/?workspace=controlled-frame-tls",
+      "icons": [
+        {
+          "src": "/images/cf.png",
+          "type": "image/png",
+          "sizes": "512x512",
+          "purpose": "any"
+        }
+      ]
+    }
+  ]
 }
